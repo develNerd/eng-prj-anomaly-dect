@@ -14,15 +14,16 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 
 
+
+
 if __name__ == '__main__':
-    # Example usage
     dataset_path = '/Users/isaacakakpo/Downloads/EnginerringProject3/capsule/'
 
     # Initialize with VGG16 (default)
     clustering = DefectClustering(
         dataset_path=dataset_path,
-        n_clusters=5,  # For KMeans
-        pca_components=50  # Number of PCA components
+        n_clusters=5,
+        pca_components=50
     )
 
     # Run with KMeans
@@ -33,8 +34,8 @@ if __name__ == '__main__':
     print("\n=== Running DBSCAN Clustering ===")
     dbscan_labels, dbscan_features = clustering.run_pipeline(
         method='dbscan',
-        eps='auto',  # Auto-detect optimal eps
-        min_samples=5  # Minimum points to form a cluster
+        eps='auto',
+        min_samples=5
     )
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
